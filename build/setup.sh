@@ -1,15 +1,10 @@
 #!/bin/bash
 export PATH=$PATH:~/bin
-#~/.bash_profile
-whoami
-who am i
-echo $PATH
-echo $GEM_HOME
-which gem
-gem list bundler -i
+GEM=`find /usr -name gem 2>/dev/null | head -1`
+
 # Script to setup our environment
-if !(`gem list bundler -i`); then
-    gem install bundler
+if !(`$GEM list bundler -i`); then
+    $GEM install bundler
 fi
 
 pushd ..
