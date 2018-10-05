@@ -7,8 +7,12 @@ if !(`gem list bundler -i`); then
 fi
 
 pushd ..
+echo "Installing gems..."
 bundle install
+echo "Gem install complete!"
 pushd assets
+echo "Copying media assets into workspace..."
 cp -rfv /usr/share/nginx/thebideo/* .
+echo "Done!"
 popd 
 popd
