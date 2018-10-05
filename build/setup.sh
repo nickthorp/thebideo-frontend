@@ -1,7 +1,7 @@
 #!/bin/bash
 export PATH=$PATH:~/bin
 GEM=`find /usr -name gem 2>/dev/null | head -1`
-
+echo $GEM
 # Script to setup our environment
 if !(`$GEM list bundler -i`); then
     $GEM install bundler
