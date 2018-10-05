@@ -1,6 +1,10 @@
 #!/bin/bash
 export PATH=$PATH:~/bin
 
+echo $PATH
+echo $GEM_HOME
+which gem
+gem list bundler -i
 # Script to setup our environment
 if !(`gem list bundler -i`); then
     gem install bundler
