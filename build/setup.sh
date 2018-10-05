@@ -1,6 +1,6 @@
 #!/bin/bash
-export PATH=$PATH:~/bin
-
+#export PATH=$PATH:~/bin
+~/.bash_profile
 echo $PATH
 echo $GEM_HOME
 which gem
