@@ -1,3 +1,9 @@
+properties(
+    [
+        [$class: 'BuildDiscarderProperty', strategy: [$class: 'LogRotator', artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '10']]
+    ]
+);
+
 node {
     stage('Checkout') {
         checkout scm
@@ -47,6 +53,6 @@ node {
     }
 
     stage('Cleanup') {
-        //cleanWs()
+        cleanWs()
     }
 }
