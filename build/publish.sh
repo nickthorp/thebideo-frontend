@@ -1,6 +1,6 @@
 #!/bin/bash
 
-WEBDIR='/opt/thebideo-frontend/'
+WEBDIR='/usr/share/nginx/html/'
 BACKUPDIR='/opt/backup_thebideo-frontend/'
 
 echo 'Cleaning up backup dir'
