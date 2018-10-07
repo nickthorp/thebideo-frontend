@@ -30,7 +30,7 @@ html {
 .row {
     display: grid;
     grid-template-columns: repeat($numColumns, 5fr);
-    grid-gap: 1rem;
+    grid-gap: 0;
 }
 
 .show-grid [class^=col-]{
@@ -50,6 +50,7 @@ html {
     background-color: whitesmoke;
     position: fixed;
     width: 100%;
+    z-index: 1;
     .logo {
         display: block;
         float: left;
@@ -95,37 +96,39 @@ html {
 }
 
 .jumbotron {
-    padding: 1rem;
     background-color: #B0779C;
     margin-top: $navMaxHeight;
-}
-
-#logo {
-    @include transform(50%);
-    border-radius: 0.5rem;
-    width: 100%;
-}
-
-.jumbotron-info {
-    display: block;
-    color: aliceblue;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-
     div {
-        @include transform(50%);
+        border: 1px solid black;
+        text-align: center;
+        .episode-panel {
+            @include transform(50%);
+            border-radius: 1rem;
+            width: 90%;
+        }
     }
-}
-
-#mainsound {
-    margin: 2rem;
-    vertical-align: bottom;
-}
-
-.twitter {
-    background-color: blue;
-    height: 100%;
-    display: none;
+    .jumbotron-info {
+        display: block;
+        color: aliceblue;
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 1rem;
+        div {
+            @include transform(50%);
+        }
+    }
+    #mainsound {
+        border-radius: 2rem;
+        margin-top: 2rem;
+        vertical-align: bottom;
+        max-width: 100%;
+    }
+    .twitter {
+        display: none;
+        max-height: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+        overflow-y: scroll;
+    }
 }
 
 .reviews {
@@ -172,24 +175,15 @@ footer {
     }
 }
 
-
-/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
-@media screen and (max-width: $smScreen) {
-    #navbar {
-        a:not(:first-child) {
-            display: none;
-        }
-        a.icon {
-            display: block;
-            float: right;
-            text-align: right;
-        }
-    }
-}
 @media screen and (min-width: $smScreen) {
     #navbar {
         a.icon {
             display: none;
+        }
+    }
+    .jumbotron {
+        .twitter {
+            display: block;
         }
     }
 }
@@ -198,7 +192,14 @@ footer {
 @media screen and (max-width: $smScreen) {
     #navbar {
         overflow: visible;
-        z-index: 9999;
+        a:not(:first-child) {
+            display: none;
+        }
+        a.icon {
+            display: block;
+            float: right;
+            text-align: right;
+        }
     }
     #navbar.responsive {
         position: fixed;
@@ -222,6 +223,9 @@ footer {
         img {
             z-index: 99999;
         }
+    }
+    .jumbotron .twitter {
+        display: none;
     }
 }
 
