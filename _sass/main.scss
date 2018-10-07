@@ -104,6 +104,7 @@ html {
             @include transform(50%);
             border-radius: 1rem;
             width: 90%;
+            max-height: 90%;
         }
     }
     .jumbotron-info {
