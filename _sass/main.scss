@@ -98,6 +98,7 @@ html {
 .jumbotron {
     background-color: #B0779C;
     margin-top: $navMaxHeight;
+
     div {
         text-align: center;
         .episode-panel {
@@ -121,11 +122,11 @@ html {
         max-width: 100%;
     }
     .twitter {
-        display: none;
         max-height: 100%;
         max-width: 100%;
-        overflow-x: hidden;
-        overflow-y: scroll;
+        iframe {
+            background-color: white;
+        }
     }
 }
 
@@ -135,7 +136,6 @@ html {
 .content {
     padding: 1rem;
     background-color: rgb(107, 1, 107);
-
     h3 {
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         font-size: 2rem;
@@ -143,7 +143,6 @@ html {
         text-align: center;
         margin-bottom: 1rem;
     }
-
     p {
         color: white;
     }
@@ -155,7 +154,6 @@ html {
     padding-top: 30px;
     height: 0;
     overflow: hidden;
-
     iframe, object, embed {
         position: absolute;
         top: 0;
@@ -222,8 +220,21 @@ footer {
             z-index: 99999;
         }
     }
-    .jumbotron .twitter {
-        display: none;
+}
+
+@media screen and (min-width: $mdScreen) {
+    .jumbotron {
+        .twitter {
+            display: block;
+        }
+    }
+}
+
+@media screen and (max-width: $mdScreen) {
+    .jumbotron {
+        .twitter {
+            display: none;
+        }
     }
 }
 
