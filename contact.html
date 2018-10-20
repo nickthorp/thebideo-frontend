@@ -6,21 +6,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>About Us - The Bideo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="main.css" />
+    <link rel="stylesheet" type="text/css" href="contact.css" />
     <link rel="shortcut icon" href="favicon.ico">
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+    <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 
 <style>
     html {
-        background-color: azure;
+        background-color: whitesmoke;
     }
 </style>
 
 <body>
-    <a href="index.html">Home</a>
-    <h1>Hi Guys!</h1>
-    
+    <div class="form-container">
+        <a href="index.html">Home</a>
+        <h1>Leave us a comment!</h1>
+
+        <form action="http://127.0.0.1/comment" method="POST" target="_self">
+            Give us your email if you want us to get back to you!<br>
+            <input type="text" name="from"><br>
+            Subject:<br>
+            <input type="text" name="subject"><br>
+            Message:<br>
+            <input id="text-box" type="text" name="text"><br><br>
+            <div class="g-recaptcha" data-sitekey="6LfT63QUAAAAAGjZh7yGdoU4jIeccClWjxkCTXvq"></div>
+            <input id="submit" type="submit" value="Submit">
+        </form>
+    </div>
 </body>
 
 </html>
